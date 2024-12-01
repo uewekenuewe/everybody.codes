@@ -1,8 +1,8 @@
 import numpy as np
 a = open("q5bex","r")
 a = open("q5b","r")
-a = open("q5c","r")
 a = open("q5cex","r")
+a = open("q5c","r")
 lines = a.readlines()
 lines = [[int(x) for x in l.split()] for l in lines]
 ansa = 0
@@ -75,7 +75,6 @@ utest =      [6345 ,
 #while(ansb == 0):
 while(True):
     result, xo = clap(m,i)
-    ansc = max(ansc,int(result))
 
 #    if result in counter.keys():
 #        counter[result] += 1 
@@ -85,7 +84,9 @@ while(True):
 #        counter[result] = 1
     m = xo
     i+=1 
-    print(i,ansc, result)
+    if str(result)[0] != "1" :#and str(result)[0] != "4":
+        ansc = max(ansc,int(result))
+        print(i,result,result[0],ansc)
 
 print("Quest 5 B: " ,ansb)
 print("Quest 5 C: " ,ansc)
